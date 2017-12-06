@@ -1,0 +1,54 @@
+body {
+  background-color: rgb(139, 169, 175);
+}
+
+#container {
+  width: 70%;
+  margin: auto;
+  height: 600px;
+}
+
+#messages {
+  height: 450px;
+  border: 5px solid rgb(68, 119, 113);
+}
+
+#nameInput {
+  width: 100%;
+  margin: 5px 0;
+  box-sizing: border-box;
+  font-size: 20px;
+  border: 2px solid rgb(68, 119, 113);
+  border-radius: 3px;
+}
+
+#messageInput {
+  width: 100%;
+  margin-bottom: 5px;
+  box-sizing: border-box;
+  font-size: 20px;
+  border: 2px solid rgb(68, 119, 113);
+  border-radius: 3px;  
+}
+
+#send {
+  float: left;
+  width: 50%;
+  border: 2px solid rgb(68, 119, 113);
+  font-size: 20px;
+}
+
+#clear {
+  width: 50%;
+  font-size: 20px;
+  border: 2px solid rgb(68, 119, 113);
+}
+
+#send:hover {
+  background-color: rgb(4, 184, 175);
+}
+
+#clear:hover {
+  background-color: rgb(243, 91, 91);
+}
+
