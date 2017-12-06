@@ -30,7 +30,7 @@
       let messageInput = getElement('messageInput');
       let clearButton = getElement('clear');
     
-      var socket = io.connect('http://127.0.0.1:3000');
+      var socket = io.connect('http://127.0.0.1:3001');
     
       if (socket !== undefined) {
         console.log('Connected to socket');
@@ -47,11 +47,13 @@
         });
       
         chatForm.addEventListener('submit', (event) => {
+          event.preventDefault();
           socket.emit('input', {
             name: nameInput.value,
             message: messageInput.value
           });
-          event.preventDefault();
+          nameInput.value = '';
+          messageInput.value = '';
         });
       
         clearButton.addEventListener('click', () => {
@@ -59,7 +61,7 @@
         });
       
         socket.on('cleared', () => {
-          messages.textContent = '';
+          messages.textContent = null;
         });
       } else {
         console.log('Error');

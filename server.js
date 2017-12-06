@@ -1,13 +1,13 @@
 const mongo = require('mongodb').MongoClient;
-const io = require('socket.io').listen(3000).sockets;
+const io = require('socket.io').listen(3001).sockets;
 
 mongo.connect('mongodb://127.0.0.1/chatapp', (err, db) => {
   if (err) console.log(err);
   console.log('Connected to mongoDB');
 
   io.on('connection', (socket) => {
-    let chat = db.collection('chats')
-
+    let chat = db.collection('chats');
+    
     chat.find()
       .limit(100)
       .sort({ _id: -1 })
