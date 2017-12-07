@@ -10,7 +10,7 @@ mongo.connect('mongodb://127.0.0.1/chatapp', (err, db) => {
     
     chat.find()
       .limit(100)
-      .sort({ _id: -1 })
+      .sort({ _id: 1 })
       .toArray((err, result) => {
         if (err) console.log(err);
         socket.emit('output', result);
